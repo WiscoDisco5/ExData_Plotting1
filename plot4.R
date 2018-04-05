@@ -6,8 +6,7 @@ if (!"power" %in% ls()) {
   source('./read_power_data.R')
 }
 
-##plot3: time series of sub metering by groups 1,2,3
-
+#store image
 png(filename = "plot4.png", width = 480, height = 480, units = 'px')
 
 #plots: entered by ROW in 2X2 grid
@@ -48,7 +47,7 @@ legend('topright',
        col = c("black", "red", 'blue'),
        bty = 'n')
 
-#plot 4
+#plot 4: global reactive power by datetime
 plot(power$DateTime,
      power$Global_reactive_power, 
      ylab = "Global_reactive_power",
@@ -57,3 +56,6 @@ plot(power$DateTime,
 
 #end
 dev.off()
+
+#clean up wd
+file.remove("household_power_consumption.txt") ##to remove text file from wd

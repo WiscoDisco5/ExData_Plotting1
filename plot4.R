@@ -15,7 +15,7 @@ par(mfrow=c(2,2))
 #plot 1: active power by time
 plot(power$DateTime,
      power$Global_active_power, 
-     ylab = "Global Active Power (kilowatts)",
+     ylab = "Global Active Power",
      xlab = NA,
      type = 'l')
 
